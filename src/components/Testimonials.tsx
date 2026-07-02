@@ -1,55 +1,56 @@
 const TESTIMONIALS = [
   {
-    name: "Dewi Astuti",
-    role: "Pemilik, Kirana Laundry — Bandung",
+    initial: "R",
+    name: "Rina Wulandari",
+    role: "Pemilik Bersih Laundry, Bandung",
     quote:
-      "Sejak pakai Aira Laundry, laporan keuangan yang dulu makan waktu semalaman sekarang selesai dalam hitungan detik.",
+      "Sejak pakai Aira, laporan keuangan yang dulu makan waktu semalaman sekarang selesai dalam hitungan menit.",
   },
   {
-    name: "Fajar Ramadhan",
-    role: "Pemilik, Bersih Laundry — Surabaya",
+    initial: "A",
+    name: "Agus Prasetyo",
+    role: "Owner Kilat Laundry, Surabaya",
     quote:
-      "Pegawai jadi lebih disiplin karena absensi dan slip gaji otomatis tercatat rapi di aplikasi.",
+      "Pelanggan jadi jarang komplain karena mereka bisa cek sendiri status cucian lewat WhatsApp.",
   },
   {
-    name: "Sri Wahyuni",
-    role: "Pemilik, Wangi Laundry — Yogyakarta",
+    initial: "S",
+    name: "Siti Marlina",
+    role: "Founder Wangi Laundry Group, Jakarta",
     quote:
-      "Pelanggan makin percaya karena bisa pantau progres cucian sendiri lewat notifikasi real-time.",
+      "Kelola 4 outlet dari satu HP saja. Aira benar-benar menghemat waktu operasional kami.",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="bg-cream-200/60">
-      <div className="mx-auto max-w-6xl px-6 py-20">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-wide text-olive-600">
-            Testimoni
-          </span>
-          <h2 className="mt-3 text-3xl font-extrabold text-olive-950 sm:text-4xl">
-            Dipercaya Pelaku Usaha Laundry di Seluruh Indonesia
-          </h2>
-        </div>
+    <section className="bg-mist px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+      <div className="mx-auto mb-12 max-w-[560px] text-center sm:mb-14">
+        <h2 className="text-[26px] font-extrabold tracking-tight text-ink sm:text-[34px]">
+          Dipercaya pengusaha laundry di seluruh Indonesia
+        </h2>
+      </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {TESTIMONIALS.map((item) => (
-            <figure
-              key={item.name}
-              className="flex flex-col rounded-3xl bg-cream-100 p-7 shadow-sm"
-            >
-              <blockquote className="flex-1 text-sm leading-relaxed text-olive-900">
-                &ldquo;{item.quote}&rdquo;
-              </blockquote>
-              <figcaption className="mt-6 border-t border-olive-600/10 pt-4">
-                <p className="text-sm font-bold text-olive-950">
-                  {item.name}
-                </p>
-                <p className="text-xs text-olive-700">{item.role}</p>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {TESTIMONIALS.map((item) => (
+          <figure
+            key={item.name}
+            className="rounded-2xl bg-white p-7 sm:p-[30px]"
+          >
+            <blockquote className="mb-[22px] text-[15px] leading-relaxed text-ink">
+              &ldquo;{item.quote}&rdquo;
+            </blockquote>
+            <figcaption className="flex items-center gap-3">
+              <span className="flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-full bg-tint text-sm font-bold text-ocean-deep">
+                {item.initial}
+              </span>
+              <div>
+                <p className="text-sm font-bold text-ink">{item.name}</p>
+                <p className="text-[12.5px] text-muted">{item.role}</p>
+              </div>
+            </figcaption>
+          </figure>
+        ))}
       </div>
     </section>
   );

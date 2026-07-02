@@ -10,34 +10,29 @@ export default function ContactBanner({
   primaryHref: string;
 }) {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
-      <div className="relative overflow-hidden rounded-[2.5rem] bg-olive-600 px-8 py-16 text-center sm:px-16">
-        <div className="pointer-events-none absolute -left-10 -top-10 h-56 w-56 rounded-full bg-cream-100/10 blur-3xl" />
-        <div className="pointer-events-none absolute -right-10 -bottom-10 h-56 w-56 rounded-full bg-olive-950/30 blur-3xl" />
-
-        <div className="relative">
-          <h2 className="text-3xl font-extrabold text-cream-100 sm:text-4xl">
-            {title}
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-cream-200/90">
-            {description}
-          </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href={primaryHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-cream-500 px-7 py-3.5 text-sm font-semibold text-olive-900 shadow-lg transition hover:bg-cream-400"
-            >
-              {primaryLabel}
-            </a>
-            <a
-              href="mailto:halo@airalaundry.id"
-              className="rounded-full border border-cream-100/40 px-7 py-3.5 text-sm font-semibold text-cream-100 transition hover:bg-cream-100/10"
-            >
-              halo@airalaundry.id
-            </a>
-          </div>
+    <section className="px-5 py-12 sm:px-8 sm:py-16 lg:px-14 lg:pb-24">
+      <div className="mx-auto max-w-[1280px] rounded-[20px] bg-ocean px-6 py-12 text-center sm:px-10 sm:py-14 lg:px-14 lg:py-16">
+        <h2 className="text-[26px] font-extrabold text-white sm:text-[32px]">
+          {title}
+        </h2>
+        <p className="mx-auto mt-4 max-w-xl text-[15px] text-tint sm:text-base">
+          {description}
+        </p>
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <a
+            href={primaryHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-[9px] bg-white px-7 py-3.5 text-[15px] font-bold text-ocean-deep transition hover:opacity-90"
+          >
+            {primaryLabel}
+          </a>
+          <a
+            href="mailto:halo@airalaundry.id"
+            className="rounded-[9px] border border-white/40 px-7 py-3.5 text-[15px] font-bold text-white transition hover:bg-white/10"
+          >
+            halo@airalaundry.id
+          </a>
         </div>
       </div>
     </section>

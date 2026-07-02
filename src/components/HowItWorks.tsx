@@ -1,51 +1,43 @@
 const STEPS = [
   {
-    number: "01",
-    title: "Daftar Akun",
-    description: "Buat akun Aira Laundry gratis hanya dalam beberapa menit.",
+    number: "1",
+    title: "Daftar & Atur Outlet",
+    description:
+      "Buat akun, tambahkan outlet dan daftar layanan laundry dalam hitungan menit.",
   },
   {
-    number: "02",
-    title: "Setup Outlet",
+    number: "2",
+    title: "Catat & Kelola Operasional",
     description:
-      "Atur data outlet, layanan, harga, dan tambahkan pegawai Anda.",
+      "Proses transaksi, atur pegawai, dan pantau produksi cucian setiap hari.",
   },
   {
-    number: "03",
-    title: "Kelola Transaksi",
+    number: "3",
+    title: "Pantau & Kembangkan Bisnis",
     description:
-      "Catat pesanan masuk, pantau progres, dan kirim notifikasi ke pelanggan.",
-  },
-  {
-    number: "04",
-    title: "Pantau Laporan",
-    description:
-      "Lihat performa usaha lewat laporan keuangan yang selalu up to date.",
+      "Lihat laporan performa dan ambil keputusan berbasis data untuk kembangkan usaha.",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
-      <div className="mx-auto max-w-2xl text-center">
-        <span className="text-sm font-semibold uppercase tracking-wide text-olive-600">
-          Cara Kerja
-        </span>
-        <h2 className="mt-3 text-3xl font-extrabold text-olive-950 sm:text-4xl">
-          Mulai dalam 4 Langkah Mudah
+    <section className="bg-mist px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+      <div className="mx-auto mb-12 max-w-[560px] text-center sm:mb-14">
+        <h2 className="text-[26px] font-extrabold tracking-tight text-ink sm:text-[34px]">
+          Mulai dalam tiga langkah
         </h2>
       </div>
 
-      <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8">
         {STEPS.map((step) => (
-          <div key={step.number} className="relative">
-            <span className="text-5xl font-extrabold text-olive-200">
+          <div key={step.number}>
+            <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-ocean text-base font-extrabold text-white">
               {step.number}
             </span>
-            <h3 className="mt-3 text-lg font-bold text-olive-950">
+            <h3 className="mb-2.5 text-lg font-bold text-ink">
               {step.title}
             </h3>
-            <p className="mt-2 text-sm text-olive-800/80">
+            <p className="text-[14.5px] leading-relaxed text-muted">
               {step.description}
             </p>
           </div>

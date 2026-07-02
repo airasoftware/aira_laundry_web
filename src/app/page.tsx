@@ -1,19 +1,10 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import FeatureGrid from "@/components/FeatureGrid";
+import HowItWorks from "@/components/HowItWorks";
 import CTA from "@/components/CTA";
 
 const QUICK_LINKS = [
-  {
-    href: "/fitur",
-    title: "Fitur",
-    description:
-      "Fitur untuk pemilik, pegawai, dan pelanggan dalam satu aplikasi.",
-  },
-  {
-    href: "/cara-kerja",
-    title: "Cara Kerja",
-    description: "Mulai kelola usaha laundry Anda dalam 4 langkah mudah.",
-  },
   {
     href: "/produk",
     title: "Produk",
@@ -40,31 +31,28 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <FeatureGrid />
+      <HowItWorks />
 
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-wide text-olive-600">
-            Jelajahi Aira Laundry
-          </span>
-          <h2 className="mt-3 text-3xl font-extrabold text-olive-950 sm:text-4xl">
-            Semua Informasi yang Anda Butuhkan
+      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+        <div className="mx-auto mb-12 max-w-[640px] text-center sm:mb-14">
+          <h2 className="text-[26px] font-extrabold tracking-tight text-ink sm:text-[34px]">
+            Jelajahi lebih lanjut
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {QUICK_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="group flex flex-col rounded-3xl border border-olive-600/15 bg-cream-100 p-7 transition hover:-translate-y-1 hover:shadow-lg"
+              className="group flex flex-col rounded-2xl border border-line p-6 transition hover:border-ocean"
             >
-              <h3 className="text-lg font-bold text-olive-950">
-                {link.title}
-              </h3>
-              <p className="mt-2 flex-1 text-sm text-olive-800/80">
+              <h3 className="text-base font-bold text-ink">{link.title}</h3>
+              <p className="mt-2 flex-1 text-[13.5px] text-muted">
                 {link.description}
               </p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-olive-600">
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-ocean">
                 Selengkapnya
                 <svg
                   className="h-4 w-4 transition group-hover:translate-x-0.5"

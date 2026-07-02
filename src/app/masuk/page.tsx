@@ -32,27 +32,25 @@ export default function MasukPage() {
         description="Aira Laundry digunakan lewat aplikasi mobile. Unduh dan masuk sesuai peran Anda."
       />
 
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-6 md:grid-cols-2">
+      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+        <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-6 sm:grid-cols-2">
           {APPS.map((app) => (
             <div
               key={app.name}
-              className="rounded-3xl border border-olive-600/15 bg-cream-100 p-8"
+              className="rounded-2xl border border-line p-8"
             >
-              <span className="text-xs font-semibold uppercase tracking-wide text-olive-600">
+              <span className="text-xs font-semibold uppercase tracking-wide text-ocean">
                 {app.audience}
               </span>
-              <h3 className="mt-2 text-xl font-bold text-olive-950">
-                {app.name}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-olive-800/80">
+              <h3 className="mt-2 text-xl font-bold text-ink">{app.name}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
                 {app.description}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-olive-950 px-4 py-2 text-xs font-semibold text-cream-100">
+                <span className="rounded-full bg-ink px-4 py-2 text-xs font-semibold text-white">
                   Google Play
                 </span>
-                <span className="rounded-full border border-olive-600/30 px-4 py-2 text-xs font-semibold text-olive-800">
+                <span className="rounded-full border border-line px-4 py-2 text-xs font-semibold text-ink">
                   App Store
                 </span>
               </div>

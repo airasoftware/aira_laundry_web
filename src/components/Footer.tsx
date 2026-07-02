@@ -4,95 +4,82 @@ const FOOTER_LINKS = [
   {
     heading: "Produk",
     links: [
-      { label: "Aira Outlet", href: "/produk" },
-      { label: "Aira Pelanggan", href: "/produk" },
-      { label: "Aplikasi Custom", href: "/produk" },
+      { label: "Fitur", href: "/fitur" },
       { label: "Harga", href: "/harga" },
+      { label: "Produk", href: "/produk" },
     ],
   },
   {
     heading: "Perusahaan",
     links: [
-      { label: "Fitur", href: "/fitur" },
       { label: "Cara Kerja", href: "/cara-kerja" },
-      { label: "Kemitraan", href: "/kemitraan" },
       { label: "Testimoni", href: "/testimoni" },
-    ],
-  },
-  {
-    heading: "Bantuan",
-    links: [
-      { label: "Coba Gratis", href: "/coba-gratis" },
-      { label: "Masuk", href: "/masuk" },
-      { label: "Kebijakan Privasi", href: "#" },
-      { label: "Syarat & Ketentuan", href: "#" },
+      { label: "Kemitraan", href: "/kemitraan" },
     ],
   },
 ];
 
-const SOCIALS = ["Facebook", "Instagram", "YouTube", "TikTok"];
-
 export default function Footer() {
   return (
-    <footer className="mt-auto bg-olive-950 text-cream-200/80">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-olive-600 font-bold text-cream-100">
+    <footer className="mt-auto border-t border-line bg-white">
+      <div className="mx-auto max-w-[1280px] px-5 py-12 sm:px-8 sm:py-14 lg:px-14">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-[2fr_1fr_1fr_1fr] sm:gap-8">
+          <div className="col-span-2 sm:col-span-1">
+            <div className="mb-3.5 flex items-center gap-2.5">
+              <span className="flex h-[30px] w-[30px] items-center justify-center rounded-lg bg-ocean text-[15px] font-bold text-white">
                 A
               </span>
-              <span className="text-lg font-bold text-cream-100">
+              <span className="text-base font-bold text-ink">
                 Aira Laundry
               </span>
             </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed">
-              Aplikasi manajemen usaha laundry untuk pemilik, pegawai, dan
-              pelanggan — mengelola bisnis jadi lebih mudah dan transparan.
-            </p>
-            <p className="mt-4 text-sm">
-              Jl. Laundry Sejahtera No. 10, Karanganyar,
-              <br />
-              Jawa Tengah, Indonesia
+            <p className="max-w-[260px] text-[13.5px] leading-relaxed text-muted">
+              Software manajemen laundry untuk usaha kiloan, kilat, hingga
+              dry clean di seluruh Indonesia.
             </p>
           </div>
 
           {FOOTER_LINKS.map((column) => (
-            <div key={column.heading}>
-              <h3 className="text-sm font-semibold text-cream-100">
+            <div key={column.heading} className="flex flex-col gap-2.5">
+              <span className="mb-1 text-[13.5px] font-bold text-ink">
                 {column.heading}
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm hover:text-cream-100"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              </span>
+              {column.links.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-[13.5px] text-muted hover:text-ocean"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           ))}
+
+          <div className="flex flex-col gap-2.5">
+            <span className="mb-1 text-[13.5px] font-bold text-ink">
+              Kontak
+            </span>
+            <a
+              href="mailto:halo@airalaundry.id"
+              className="text-[13.5px] text-muted hover:text-ocean"
+            >
+              halo@airalaundry.id
+            </a>
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[13.5px] text-muted hover:text-ocean"
+            >
+              WhatsApp Sales
+            </a>
+          </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-cream-100/10 pt-8 sm:flex-row">
-          <p className="text-xs">
-            © {new Date().getFullYear()} Aira Laundry. Semua hak dilindungi.
-          </p>
-          <div className="flex gap-5">
-            {SOCIALS.map((social) => (
-              <a
-                key={social}
-                href="#"
-                className="text-xs font-medium hover:text-cream-100"
-              >
-                {social}
-              </a>
-            ))}
-          </div>
+        <div className="mt-10 border-t border-line pt-6 text-[12.5px] text-muted">
+          © {new Date().getFullYear()} Aira Laundry. Seluruh hak cipta
+          dilindungi.
         </div>
       </div>
     </footer>

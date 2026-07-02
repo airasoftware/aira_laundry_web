@@ -24,36 +24,36 @@ const PRODUCTS = [
 
 export default function Products() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
-      <div className="mx-auto max-w-2xl text-center">
-        <span className="text-sm font-semibold uppercase tracking-wide text-olive-600">
+    <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+      <div className="mx-auto mb-12 max-w-[640px] text-center sm:mb-14">
+        <span className="text-[13px] font-bold uppercase tracking-wide text-mint">
           Produk Kami
         </span>
-        <h2 className="mt-3 text-3xl font-extrabold text-olive-950 sm:text-4xl">
+        <h2 className="mt-3 text-[26px] font-extrabold tracking-tight text-ink sm:text-[34px]">
           Ekosistem Aplikasi Aira Laundry
         </h2>
       </div>
 
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-6 sm:grid-cols-3">
         {PRODUCTS.map((product) => (
           <div
             key={product.name}
-            className="flex flex-col rounded-3xl border border-olive-600/15 p-8"
+            className="flex flex-col rounded-2xl border border-line p-8"
           >
-            <span className="text-xs font-semibold uppercase tracking-wide text-olive-600">
+            <span className="text-[12.5px] font-semibold uppercase tracking-wide text-ocean">
               {product.audience}
             </span>
-            <h3 className="mt-2 text-xl font-bold text-olive-950">
+            <h3 className="mt-2 text-lg font-bold text-ink sm:text-xl">
               {product.name}
             </h3>
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-olive-800/80">
+            <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
               {product.description}
             </p>
             <ul className="mt-6 flex flex-wrap gap-2">
               {product.highlights.map((highlight) => (
                 <li
                   key={highlight}
-                  className="rounded-full bg-olive-200/60 px-3 py-1 text-xs font-medium text-olive-800"
+                  className="rounded-full bg-tint px-3 py-1 text-xs font-medium text-ocean-deep"
                 >
                   {highlight}
                 </li>

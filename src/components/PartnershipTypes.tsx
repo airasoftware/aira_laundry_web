@@ -21,36 +21,36 @@ const TYPES = [
 
 export default function PartnershipTypes() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
-      <div className="mx-auto max-w-2xl text-center">
-        <span className="text-sm font-semibold uppercase tracking-wide text-olive-600">
+    <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+      <div className="mx-auto mb-12 max-w-[640px] text-center sm:mb-14">
+        <span className="text-[13px] font-bold uppercase tracking-wide text-mint">
           Jenis Kemitraan
         </span>
-        <h2 className="mt-3 text-3xl font-extrabold text-olive-950 sm:text-4xl">
+        <h2 className="mt-3 text-[26px] font-extrabold tracking-tight text-ink sm:text-[34px]">
           Pilih Skema Kemitraan yang Sesuai
         </h2>
       </div>
 
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-6 sm:grid-cols-3">
         {TYPES.map((type) => (
           <div
             key={type.title}
-            className="flex flex-col rounded-3xl border border-olive-600/15 bg-cream-100 p-8"
+            className="flex flex-col rounded-2xl border border-line p-8"
           >
-            <h3 className="text-xl font-bold text-olive-950">
+            <h3 className="text-lg font-bold text-ink sm:text-xl">
               {type.title}
             </h3>
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-olive-800/80">
+            <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
               {type.description}
             </p>
             <ul className="mt-6 space-y-2.5">
               {type.perks.map((perk) => (
                 <li
                   key={perk}
-                  className="flex items-start gap-2.5 text-sm text-olive-800"
+                  className="flex items-start gap-2.5 text-sm text-ink"
                 >
                   <svg
-                    className="mt-0.5 h-4 w-4 flex-shrink-0 text-olive-600"
+                    className="mt-0.5 h-4 w-4 flex-shrink-0 text-ocean"
                     viewBox="0 0 20 20"
                     fill="none"
                     aria-hidden

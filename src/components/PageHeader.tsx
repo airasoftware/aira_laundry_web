@@ -8,17 +8,17 @@ export default function PageHeader({
   description?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-olive-600">
-      <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-olive-500/40 blur-3xl" />
-      <div className="relative mx-auto max-w-3xl px-6 py-16 text-center sm:py-20">
-        <span className="inline-flex items-center rounded-full bg-cream-500/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-cream-100 ring-1 ring-inset ring-cream-100/30">
+    <section className="relative overflow-hidden bg-canvas">
+      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-tint sm:h-64 sm:w-64" />
+      <div className="relative mx-auto max-w-3xl px-5 py-14 text-center sm:px-8 sm:py-20">
+        <span className="inline-flex items-center rounded-full bg-tint px-3.5 py-[7px] text-[13px] font-semibold text-ocean-deep">
           {eyebrow}
         </span>
-        <h1 className="mt-5 text-4xl font-extrabold leading-tight text-cream-100 sm:text-5xl">
+        <h1 className="mt-5 text-[30px] font-extrabold leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl">
           {title}
         </h1>
         {description && (
-          <p className="mx-auto mt-4 max-w-xl text-lg text-cream-200/90">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             {description}
           </p>
         )}

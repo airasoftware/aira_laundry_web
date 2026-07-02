@@ -18,26 +18,24 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-olive-600/10 bg-cream-500/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-olive-600 text-cream-100 font-bold">
+    <header className="sticky top-0 z-50 border-b border-line bg-white">
+      <nav className="flex items-center justify-between px-5 py-4 sm:px-8 lg:px-14 lg:py-[22px]">
+        <Link href="/" className="flex items-center gap-2.5">
+          <span className="flex h-[34px] w-[34px] items-center justify-center rounded-[9px] bg-ocean text-[17px] font-bold text-white">
             A
           </span>
-          <span className="text-lg font-bold tracking-tight text-olive-950">
-            Aira Laundry
-          </span>
+          <span className="text-lg font-bold text-ink">Aira Laundry</span>
         </Link>
 
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-9 lg:flex">
           {NAV_LINKS.map((link) => {
             const active = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition hover:text-olive-600 ${
-                  active ? "text-olive-600" : "text-olive-800"
+                className={`text-[14.5px] font-medium transition hover:text-ocean ${
+                  active ? "text-ocean" : "text-ink"
                 }`}
               >
                 {link.label}
@@ -46,16 +44,16 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3.5 lg:flex">
           <Link
             href="/masuk"
-            className="text-sm font-semibold text-olive-800 hover:text-olive-600"
+            className="text-[14.5px] font-semibold text-ink hover:text-ocean"
           >
             Masuk
           </Link>
           <Link
             href="/coba-gratis"
-            className="rounded-full bg-olive-600 px-5 py-2.5 text-sm font-semibold text-cream-100 shadow-sm transition hover:bg-olive-700"
+            className="rounded-lg bg-ocean px-5 py-2.5 text-[14.5px] font-semibold text-white transition hover:opacity-90"
           >
             Coba Gratis
           </Link>
@@ -65,7 +63,8 @@ export default function Navbar() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label="Buka menu"
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-olive-600/20 text-olive-800 lg:hidden"
+          aria-expanded={open}
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-ink lg:hidden"
         >
           <svg
             width="20"
@@ -74,19 +73,28 @@ export default function Navbar() {
             fill="none"
             aria-hidden
           >
-            <path
-              d="M3 5h14M3 10h14M3 15h14"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-            />
+            {open ? (
+              <path
+                d="M5 5l10 10M15 5L5 15"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+              />
+            ) : (
+              <path
+                d="M3 5h14M3 10h14M3 15h14"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+              />
+            )}
           </svg>
         </button>
       </nav>
 
       {open && (
-        <div className="border-t border-olive-600/10 bg-cream-500 px-6 py-4 lg:hidden">
-          <div className="flex flex-col gap-4">
+        <div className="border-t border-line bg-white px-5 py-5 sm:px-8 lg:hidden">
+          <div className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => {
               const active = pathname === link.href;
               return (
@@ -94,26 +102,26 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={`text-sm font-medium ${
-                    active ? "text-olive-600" : "text-olive-800"
+                  className={`rounded-lg px-3 py-2.5 text-[15px] font-medium ${
+                    active ? "bg-tint text-ocean-deep" : "text-ink"
                   }`}
                 >
                   {link.label}
                 </Link>
               );
             })}
-            <div className="flex items-center gap-3 pt-2">
+            <div className="mt-3 flex items-center gap-3 border-t border-line pt-4">
               <Link
                 href="/masuk"
                 onClick={() => setOpen(false)}
-                className="flex-1 rounded-full border border-olive-600/30 px-4 py-2.5 text-center text-sm font-semibold text-olive-800"
+                className="flex-1 rounded-lg border border-line px-4 py-2.5 text-center text-sm font-semibold text-ink"
               >
                 Masuk
               </Link>
               <Link
                 href="/coba-gratis"
                 onClick={() => setOpen(false)}
-                className="flex-1 rounded-full bg-olive-600 px-4 py-2.5 text-center text-sm font-semibold text-cream-100"
+                className="flex-1 rounded-lg bg-ocean px-4 py-2.5 text-center text-sm font-semibold text-white"
               >
                 Coba Gratis
               </Link>

@@ -39,28 +39,26 @@ export default function CobaGratisPage() {
         description="Paket Starter gratis selamanya untuk 1 outlet, tanpa kartu kredit. Butuh lebih banyak outlet? Lihat pilihan paket lain di halaman Harga."
       />
 
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-8 sm:grid-cols-3">
+      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+        <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-8 sm:grid-cols-3">
           {STEPS.map((step) => (
             <div key={step.number}>
-              <span className="text-5xl font-extrabold text-olive-200">
+              <span className="text-4xl font-extrabold text-line sm:text-5xl">
                 {step.number}
               </span>
-              <h3 className="mt-3 text-lg font-bold text-olive-950">
+              <h3 className="mt-3 text-lg font-bold text-ink">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm text-olive-800/80">
-                {step.description}
-              </p>
+              <p className="mt-2 text-sm text-muted">{step.description}</p>
             </div>
           ))}
         </div>
 
-        <p className="mt-14 text-center text-sm text-olive-800/70">
+        <p className="mt-14 text-center text-sm text-muted">
           Ingin bandingkan dulu paketnya?{" "}
           <Link
             href="/harga"
-            className="font-semibold text-olive-600 hover:underline"
+            className="font-semibold text-ocean hover:underline"
           >
             Lihat semua paket harga
           </Link>

@@ -1,134 +1,98 @@
 const PLANS = [
   {
     name: "Starter",
-    price: "Gratis",
-    period: "selamanya",
-    description: "Untuk usaha laundry baru yang ingin mulai digital.",
-    features: [
-      "1 outlet",
-      "Pencatatan transaksi",
-      "Nota digital pelanggan",
-      "Laporan dasar",
-    ],
-    highlighted: false,
+    description: "Cocok untuk laundry baru dengan 1 outlet",
+    price: "Rp 99rb",
+    period: "/bulan",
+    features: ["Kasir & transaksi", "1 outlet", "Laporan dasar", "Support email"],
+    cta: "Coba Gratis",
   },
   {
     name: "Pro",
-    price: "Rp 99rb",
+    description: "Untuk laundry yang siap berkembang",
+    price: "Rp 249rb",
     period: "/bulan",
-    description: "Untuk usaha yang berkembang dan butuh fitur lengkap.",
     features: [
-      "Hingga 3 outlet",
-      "Manajemen pegawai & absensi",
+      "Semua fitur Starter",
+      "Hingga 5 outlet",
+      "Notifikasi WhatsApp otomatis",
+      "Kelola pegawai & shift",
       "Laporan keuangan lengkap",
-      "Notifikasi otomatis pelanggan",
     ],
-    highlighted: true,
+    cta: "Coba Gratis",
   },
   {
     name: "Bisnis",
-    price: "Hubungi Kami",
-    period: "",
-    description: "Untuk jaringan laundry berskala besar.",
+    description: "Untuk jaringan laundry berskala besar",
+    price: "Hubungi",
+    period: "Kami",
     features: [
+      "Semua fitur Pro",
       "Outlet tanpa batas",
-      "Aplikasi custom & branding",
-      "Dukungan prioritas",
-      "Integrasi khusus",
+      "Integrasi API",
+      "Account manager khusus",
     ],
-    highlighted: false,
+    cta: "Hubungi Sales",
   },
 ];
 
 export default function Pricing() {
   return (
-    <section className="bg-olive-950">
-      <div className="mx-auto max-w-6xl px-6 py-20">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-wide text-olive-300">
-            Harga
-          </span>
-          <h2 className="mt-3 text-3xl font-extrabold text-cream-100 sm:text-4xl">
-            Paket yang Sesuai untuk Setiap Skala Usaha
-          </h2>
-        </div>
+    <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+      <div className="mx-auto mb-12 max-w-[560px] text-center sm:mb-14">
+        <h2 className="text-[26px] font-extrabold tracking-tight text-ink sm:text-[34px]">
+          Paket yang sesuai skala usaha Anda
+        </h2>
+        <p className="mt-4 text-[15px] text-muted sm:text-base">
+          Tanpa kontrak jangka panjang. Batalkan kapan saja.
+        </p>
+      </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {PLANS.map((plan) => (
-            <div
-              key={plan.name}
-              className={`flex flex-col rounded-3xl p-8 ${
-                plan.highlighted
-                  ? "bg-cream-500 text-olive-950 ring-4 ring-olive-500"
-                  : "border border-cream-100/15 text-cream-100"
-              }`}
-            >
-              {plan.highlighted && (
-                <span className="mb-4 inline-block w-fit rounded-full bg-olive-600 px-3 py-1 text-xs font-semibold text-cream-100">
-                  Paling Populer
-                </span>
-              )}
-              <h3 className="text-lg font-bold">{plan.name}</h3>
-              <p
-                className={`mt-1 text-sm ${
-                  plan.highlighted ? "text-olive-700" : "text-cream-200/75"
-                }`}
-              >
-                {plan.description}
-              </p>
-              <div className="mt-6 flex items-baseline gap-1">
-                <span className="text-3xl font-extrabold">{plan.price}</span>
-                {plan.period && (
-                  <span
-                    className={`text-sm ${
-                      plan.highlighted ? "text-olive-700" : "text-cream-200/75"
-                    }`}
-                  >
-                    {plan.period}
-                  </span>
-                )}
-              </div>
-
-              <ul className="mt-6 flex-1 space-y-3">
-                {plan.features.map((feature) => (
-                  <li
-                    key={feature}
-                    className="flex items-start gap-2.5 text-sm"
-                  >
-                    <svg
-                      className={`mt-0.5 h-4 w-4 flex-shrink-0 ${
-                        plan.highlighted ? "text-olive-600" : "text-olive-300"
-                      }`}
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      aria-hidden
-                    >
-                      <path
-                        d="M4 10.5l3.5 3.5L16 6"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="/coba-gratis"
-                className={`mt-8 rounded-full px-5 py-3 text-center text-sm font-semibold transition ${
-                  plan.highlighted
-                    ? "bg-olive-600 text-cream-100 hover:bg-olive-700"
-                    : "border border-cream-100/30 text-cream-100 hover:bg-cream-100/10"
-                }`}
-              >
-                Pilih {plan.name}
-              </a>
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {PLANS.map((plan) => (
+          <div
+            key={plan.name}
+            className="flex flex-col rounded-2xl border-[1.5px] border-line p-8"
+          >
+            <h3 className="mb-1.5 text-lg font-bold text-ink sm:text-[19px]">
+              {plan.name}
+            </h3>
+            <p className="mb-6 text-[13.5px] text-muted">
+              {plan.description}
+            </p>
+            <div className="mb-7">
+              <span className="text-[26px] font-extrabold text-ink sm:text-[30px]">
+                {plan.price}
+              </span>
+              <span className="text-sm text-muted"> {plan.period}</span>
             </div>
-          ))}
-        </div>
+
+            <div className="mb-8 flex flex-1 flex-col gap-3">
+              {plan.features.map((feature) => (
+                <div
+                  key={feature}
+                  className="flex gap-2.5 text-sm text-ink"
+                >
+                  <span className="font-bold text-ocean">•</span>
+                  <span>{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href={
+                plan.cta === "Hubungi Sales"
+                  ? "https://wa.me/6281234567890"
+                  : "/coba-gratis"
+              }
+              target={plan.cta === "Hubungi Sales" ? "_blank" : undefined}
+              rel={plan.cta === "Hubungi Sales" ? "noopener noreferrer" : undefined}
+              className="rounded-[9px] bg-ocean py-3.5 text-center text-[14.5px] font-bold text-white transition hover:opacity-90"
+            >
+              {plan.cta}
+            </a>
+          </div>
+        ))}
       </div>
     </section>
   );
