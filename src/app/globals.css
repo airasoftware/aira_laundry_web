@@ -1,8 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffdd0;
+  --foreground: #2c3618;
+
+  --color-olive-950: #262f16;
+  --color-olive-900: #3a4820;
+  --color-olive-800: #445526;
+  --color-olive-700: #4c6329;
+  --color-olive-600: #556b2f;
+  --color-olive-500: #6b8339;
+  --color-olive-400: #87a355;
+  --color-olive-300: #a9c17e;
+  --color-olive-200: #cfdfab;
+
+  --color-cream-500: #fffdd0;
+  --color-cream-400: #fffbc0;
+  --color-cream-300: #fdf7ad;
+  --color-cream-200: #f6efa0;
+  --color-cream-100: #fffef0;
 }
 
 @theme inline {
@@ -10,17 +26,26 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-olive-950: var(--color-olive-950);
+  --color-olive-900: var(--color-olive-900);
+  --color-olive-800: var(--color-olive-800);
+  --color-olive-700: var(--color-olive-700);
+  --color-olive-600: var(--color-olive-600);
+  --color-olive-500: var(--color-olive-500);
+  --color-olive-400: var(--color-olive-400);
+  --color-olive-300: var(--color-olive-300);
+  --color-olive-200: var(--color-olive-200);
+
+  --color-cream-500: var(--color-cream-500);
+  --color-cream-400: var(--color-cream-400);
+  --color-cream-300: var(--color-cream-300);
+  --color-cream-200: var(--color-cream-200);
+  --color-cream-100: var(--color-cream-100);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
